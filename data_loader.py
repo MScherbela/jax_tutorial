@@ -10,9 +10,7 @@ def load_qm7(n_train=6500):
 
 
 def make_batches(x, y, n_batches):
-    n_samples = len(x)
-    assert n_samples % n_batches == 0
-    batch_size = n_samples // n_batches
+    batch_size = len(x) // n_batches
     indices = np.random.permutation(len(x))
     x = x[indices]
     y = y[indices]
